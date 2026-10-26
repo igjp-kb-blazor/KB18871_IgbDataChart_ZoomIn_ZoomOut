@@ -1,0 +1,76 @@
+<div style="max-width: 600px; margin: auto; padding: 24px; display: flex; flex-direction: column; gap: 24px;">
+    <div>
+        <IgbButton @onclick="OnZoomIn">Zoom In</IgbButton>
+        <IgbButton @onclick="OnZoomOut">Zoom Out</IgbButton>
+    </div>
+    <div>
+        <IgbLegend @ref="_legend"></IgbLegend>
+
+        <IgbDataChart Width="100%"
+                      Height="300px"
+                      @ref="chart"
+                      Legend="_legend"
+                      ComputedPlotAreaMarginMode="ComputedPlotAreaMarginMode.Series">
+            <IgbCategoryXAxis Name="xAxis"
+                              DataSource="_data"
+                              Label="@nameof(DataItem.Index)"
+                              Interval="0.5"
+                              MajorStroke="1">
+            </IgbCategoryXAxis>
+
+            <IgbNumericYAxis Name="yAxis"
+                             MinimumValue="10"
+                             MaximumValue="16"
+                             Interval="0.5">
+            </IgbNumericYAxis>
+
+            <IgbColumnSeries Title="Sample Data"
+                           DataSource="_data"
+                           XAxisName="xAxis"
+                           YAxisName="yAxis"
+                           ValueMemberPath="@nameof(DataItem.Value)">
+            </IgbColumnSeries>
+        </IgbDataChart>
+    </div>
+</div>
+
+@code {
+    private IgbDataChart? chart;
+
+    private async Task OnZoomIn()
+    {
+        if (chart != null) await chart.ZoomInAsync(0.1);
+    }
+
+    private async Task OnZoomOut()
+    {
+        if (chart != null) await chart.ZoomOutAsync(0.1);
+    }
+
+    public class DataItem
+    {
+        public int Index { get; set; }
+        public double? Value { get; set; }
+    }
+
+    private List<DataItem> _data = new()
+    {
+        new(){ Index = 0, Value = 12 },
+        new(){ Index = 1, Value = 14 },
+        new(){ Index = 2, Value = 11 },
+        new(){ Index = 3, Value = 13 },
+        new(){ Index = 4, Value = 15 },
+        new(){ Index = 5, Value = 12 },
+        new(){ Index = 6, Value = 14 },
+    };
+
+    private IgbLegend? _legend;
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            this.StateHasChanged();
+        }
+    }
+}

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.6.11828.311 oobstable
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KB18871_IgbDataChart_ZoomIn_ZoomOut", "KB18871_IgbDataChart_ZoomIn_ZoomOut.csproj", "{276956FD-29B6-4D8D-9565-7E53E90A7357}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{276956FD-29B6-4D8D-9565-7E53E90A7357}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{276956FD-29B6-4D8D-9565-7E53E90A7357}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{276956FD-29B6-4D8D-9565-7E53E90A7357}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{276956FD-29B6-4D8D-9565-7E53E90A7357}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4451A907-C322-4888-A0D4-1E5F709D5C69}
+	EndGlobalSection
+EndGlobal
